@@ -16,6 +16,10 @@ class TestChecker(unittest.TestCase):
         self.assertFalse(sentenceChecker('One lazy dog is too few, 12 is too many.'))
         self.assertFalse(sentenceChecker('Are there 11, 12, or 13 lazy dogs?'))
         self.assertFalse(sentenceChecker('There is no punctuation in this sentence'))
+        self.assertFalse(sentenceChecker('boaz enjoyed this challenge!'))
+        self.assertTrue(sentenceChecker('Boaz enjoyed "this" challenge!'))
+        self.assertFalse(sentenceChecker(r'123456%%^^^%%%%!'))
+        self.assertFalse(sentenceChecker('Boaz ""enjoyed" this challenge!'))
 
 
 if __name__ == "__main__":
