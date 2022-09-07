@@ -12,7 +12,7 @@ def sentenceChecker(checkedString):
     #The main function creates an empty list and appends all the above function tests to it as booleans. 
     # If any of the items on the list are false, function returns false, otherwise true.
     testsList = []
-    if checkedString: #Making sure the sting isn't empty
+    if checkedString: #Making sure the string isn't empty
         testsList.append(True if re.search("^[A-Z]",checkedString) else False) #Using reguar expressions to test if string starts with capital letter
         testsList.append(True if re.search("[.,?,!]$",checkedString) else False) #Using reguar expressions to test if string ends with any of the approved termination characters
         testsList.append(len(re.findall(r'\"', checkedString))%2 == 0) #Using regular expressions to list all quotation marks, then using the modulo operator on the length of the list to test if it's even
